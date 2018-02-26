@@ -1,0 +1,21 @@
+{*{block slug}homepage{/block}*}
+{*{$textStranky|noescape|striptags|strip|trim|truncate:250}*}
+{*{control texts:content 'peceOKasmir'|noescape|striptags|strip|trim|truncate:250}*}
+
+{block content}
+
+    {dump $presenter->user}
+    {*toto je profilova tajna sekce pro uživatele: {$user->getId()}, {?$data = $user->getIdentity()->getData()}*}
+    {*{$data['username']}*}
+
+{/block}
+
+{*
+{block scripts}
+{include parent}
+{/block}
+
+{block head}
+{include parent}
+{/block}
+*}
