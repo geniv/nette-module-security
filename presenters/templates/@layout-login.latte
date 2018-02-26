@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{$presenter->locale?:'cs'}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{ifset $seoData->Title}{$seoData->Title}{else}{ifset #title}{include title} | {/ifset}Vizzio Admin{/ifset}</title>
+        <meta name="description" content="{ifset $seoData->Description}{$seoData->Description}{else}{ifset #description}{include description} | {/ifset}Vizzio Admin{/ifset}">
+
+        <base href="{$baseUrl}">
+
+        {*<meta name="Author" content="GMR &amp; Vizzio Group">*}
+        {*<meta name="robots" content="noindex,nofollow">*}
+        {*<meta name="googlebot" content="noindex,nofollow">*}
+
+        {*<link rel="icon" type="image/png" href="www/images/favicons/favicon-32x32.png" sizes="32x32">*}
+        {*<link rel="icon" type="image/png" href="www/images/favicons/favicon-16x16.png" sizes="16x16">*}
+        {*<link rel="shortcut icon" href="www/images/favicons/favicon.ico">*}
+
+        {*<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=latin-ext" rel="stylesheet">*}
+        <link rel="stylesheet" href="www/login/css/{$presenter->context->parameters['environment']=='production' ? 'styles.min.css' : 'styles.css'}">
+
+    </head>
+    <body id="lang-{$presenter->locale?:'cs'}">
+
+        {include content}
+
+        <script src="www/login/js/{$presenter->context->parameters['environment']=='production' ? 'scripts.min.js' : 'scripts.js'}"></script>
+
+{*{if $flashes}
+    {foreach $flashes as $flash}
+        <script>
+            swal({
+                title: {$flash->message},
+                type: {$flash->type},
+                width: 400,
+                padding: 15,
+                customClass: "nwa-sweetalert2",
+                buttonsStyling: false
+            });
+        </script>
+    {/foreach}
+{/if}*}
+
+        {*<script n:if="$presenter->context->parameters['environment']=='development'" id="__bs_script__">
+            //<![CDATA[
+                document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
+            //]]>
+        </script>*}
+
+    </body>
+</html>

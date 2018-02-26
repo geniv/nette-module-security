@@ -1,0 +1,20 @@
+{layout '../@layout-login.latte'}
+
+{block content}
+<div class="height-center">
+    <div class="container container-login">
+        <div class="row">
+            <div class="col-xs-12">
+                <a n:href="Login:">
+                    <img src="www/images/admin-logo.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-7">
+                {control loginForm}
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
