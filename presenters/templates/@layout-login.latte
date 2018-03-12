@@ -28,26 +28,5 @@
 
         <script src="www/login/js/{$presenter->context->parameters['environment']=='production' ? 'scripts.min.js' : 'scripts.js'}"></script>
 
-{*{if $flashes}
-    {foreach $flashes as $flash}
-        <script>
-            swal({
-                title: {$flash->message},
-                type: {$flash->type},
-                width: 400,
-                padding: 15,
-                customClass: "nwa-sweetalert2",
-                buttonsStyling: false
-            });
-        </script>
-    {/foreach}
-{/if}*}
-
-        {*<script n:if="$presenter->context->parameters['environment']=='development'" id="__bs_script__">
-            //<![CDATA[
-                document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
-            //]]>
-        </script>*}
-
     </body>
 </html>
